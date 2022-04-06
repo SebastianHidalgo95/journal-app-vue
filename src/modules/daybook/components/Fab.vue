@@ -2,6 +2,7 @@
     <button @click="$router.push( {name:'entry-view'})" class="btn btn-primary">
         <i class="fa fa-2x"
             :class="icon"
+            @click="$emit('on:click')"
         >
         </i>
     </button>
@@ -14,7 +15,8 @@ export default {
             required: true,
             default: 'fa-plus'
         }
-    }
+    },
+
 
 }
 </script>
