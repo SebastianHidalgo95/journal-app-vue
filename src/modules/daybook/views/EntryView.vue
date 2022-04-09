@@ -81,7 +81,13 @@ export default {
 
         async saveEntry() {
             const entry = this.entry
-            this.updateEntry( entry )
+            if( this.entry.id ){
+                await this.updateEntry( entry )
+            } else {
+                console.log('nuevaentrada')
+            }
+            
+            
         },
         loadEntry() {
             let entry

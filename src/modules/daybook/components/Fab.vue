@@ -1,8 +1,8 @@
 <template >
-    <button @click="$router.push( {name:'entry-view'})" class="btn btn-primary">
+    <button @click="launchAction" class="btn btn-primary">
         <i class="fa fa-2x"
             :class="icon"
-            @click="$emit('on:click')"
+            
         >
         </i>
     </button>
@@ -16,7 +16,13 @@ export default {
             default: 'fa-plus'
         }
     },
-
+    methods: {
+        launchAction (){
+            this.$router.push( {name:'entry-view', params: { id: 'new'}})
+            this.$emit('on:click')
+            
+        }
+    },
 
 }
 </script>
